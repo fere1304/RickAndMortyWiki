@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./Cards.module.scss";
+import css from './Cards.module.css'
 
 const Cards = ({results}) => {
     
@@ -10,7 +11,7 @@ console.log(results);
             let {id, name, image, species, status} =index
            return( 
            <div key={id} className="col-4 mb-4 position-relative">
-           <div className={styles.cards}>
+           <div className={`${css.cards} ${css.shadow}`}>
             <img src={image} alt="" className={`${styles.img} img-fluid`}/>
             <div style={{padding : "20px"}}className="content">
             <div className="fs-4 fw-bold mb-4">{name}</div>
