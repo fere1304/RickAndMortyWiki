@@ -33,10 +33,10 @@ const Characters = () => {
 
   return <div className="App">
    
-    
+    <h1 className="text-center mb-4">Characters</h1>
     <Search setPageNumber={setPageNumber} setSearch={setSearch}/>
     <div className="container">
-      <div className="row">
+      <div className="row"> 
         
           <Filters  
           setSpecies={setSpecies}
@@ -46,7 +46,7 @@ const Characters = () => {
         
         <div className="col-8">
           <div className="row">
-          <Cards results={results} />
+          <Cards page="/characters/" results={results} />
             
           </div>
         </div>
