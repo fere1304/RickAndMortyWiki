@@ -5,7 +5,7 @@ import css from "./Cards.module.css";
 
 const Cards = ({ results, page }) => {
   let display;
-  console.log(results);
+  // console.log(results);
   if (results) {
     display = results.map((index) => {
       let { id, name, image, species, status } = index;
