@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap"
 import css from "./App.css";
-import logo from "./logo.jpg";
+import logo from "./logo.png";
 //import { useCharacters, useLocations } from "./api/useData";
 
 import Navbar from "./components/Navbar/Navbar";

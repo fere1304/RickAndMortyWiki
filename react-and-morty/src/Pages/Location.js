@@ -5,8 +5,9 @@ import InputGroup from "../components/Filters/Category/InputGroup";
 const Location = () => {
   let [results, setResults] = React.useState([]);
   let [info, setInfo] = useState([]);
-  let {type, name } = info;
+  let {dimension, created,type, name } = info;
   let [number, setNumber] = useState(1);
+
 
   let api = `https://rickandmortyapi.com/api/location/${number}`;
 
@@ -20,7 +21,8 @@ const Location = () => {
           return fetch(item).then((res) => res.json());
         })
       );
-      setResults(location);
+       setResults(location)
+      //console.log(data);
     })();
   }, [api]);
 
@@ -34,6 +36,8 @@ const Location = () => {
             {name === "" ? "Unknown" : name}
           </span>
         </h1>
+        <h5 className="text-center">Dimension: {dimension === "" ? "Unknown" : dimension}</h5>
+        <h5 className="text-center">Created: {created === "" ? "Unknown" : created}</h5>
         <h5 className="text-center">Type: {type === "" ? "Unknown" : type}</h5>
       </div>
       <div className="row">
