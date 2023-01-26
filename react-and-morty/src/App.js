@@ -1,17 +1,35 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/js/bootstrap"
 import "./App.css";
-import { useCharacters, useLocations } from "./api/useData";
+//import { useCharacters, useLocations } from "./api/useData";
 
+import Navbar from "./components/Navbar/Navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Characters from "./Pages/Characters";
+import Location from "./Pages/Location";
+import Episodes from "./Pages/Episodes";
 function App() {
-  const characters = useCharacters(1);
-  const locations = useLocations(1);
+  return (
+    <Router>
+      <div className="App">
+        <Navbar />
+      </div>
+      <Routes>
+      <Route path="/" element={<Home />} />
+        <Route path="/episodes" element={<Episodes />} />
+        <Route path="/characters" element={<Characters />} />
+        <Route path="/location" element={<Location />} />
+        
+      </Routes>
+    </Router>
+  );
+}
+const Home = ()=>{
+  return (
+    <div className="App">Buna ziua</div>
+  )
 
-  console.log("Characters data: ");
-  console.log(characters);
-  console.log("Locations data: ");
-  console.log(locations);
-
-  return <div className="App">Take a look at the console! (F12)</div>;
 }
 
 export default App;
